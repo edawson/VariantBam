@@ -40,4 +40,4 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1
 RUN tar xjf samtools-1.3.1.tar.bz2
 RUN cd samtools-1.3.1 && make -j 4 && make install
 
-RUN git clone --recursive https://github.com/walaj/variantbam && cd variantbam && ./configure && make && make install
+RUN git clone --recursive https://github.com/walaj/variantbam && cd variantbam && ./configure && make && mv src/variant src/variantbam && cp src/variantbam /usr/bin/
